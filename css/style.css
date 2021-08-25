@@ -214,3 +214,10 @@ h2 {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: black;
+    }
+    ;
+}
