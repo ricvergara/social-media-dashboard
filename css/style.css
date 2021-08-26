@@ -9,6 +9,7 @@
     --dark-grayish: hsl(228, 12%, 44%);
     --light-grayish-blue: hsl(227, 47%, 96%);
     /* --desaturated-blue-text: hsl(228, 34%, 66%); */
+    --blue-dark: hsl(230, 17%, 14%);
 }
 
 body {
@@ -39,8 +40,35 @@ h1 {
     color: var(--dark-grayish);
     margin: .5em 0;
     font-weight: bold;
-    border-bottom: 2px solid var(--dark-grayish);
+    border-bottom: 1px solid var(--dark-grayish);
     padding-bottom: 1.5em;
+}
+
+.switch {
+    /* border: 1px solid yellow; */
+    height: 40px;
+    display: block;
+    border-radius: 20px;
+    background: var(--dark-grayish);
+    width: 80px;
+    padding: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+    user-select: none;
+}
+
+.switch::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: var(--blue-dark);
+    border-radius: 50%;
+    transform: translateX(40px);
+}
+
+.checkbox::checked~.switch {
+    border: 1px solid yellow;
 }
 
 .top-cards {
@@ -126,6 +154,10 @@ h1 {
 
 .card-today img {
     margin-right: 5px;
+}
+
+.card-today.is-danger {
+    color: var(--bright-red);
 }
 
 
@@ -217,10 +249,13 @@ h2 {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
     html {
         background: hsl(230, 17%, 14%);
         color: white;
+    }
+    .header {
+        background: hsl(230, 17%, 14%);
     }
      :root {
         --light-grayish-blue: hsl(228, 28%, 20%);
