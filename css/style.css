@@ -10,6 +10,9 @@
     --light-grayish-blue: hsl(227, 47%, 96%);
     /* --desaturated-blue-text: hsl(228, 34%, 66%); */
     --blue-dark: hsl(230, 17%, 14%);
+    --white: hsl(0, 0%, 100%);
+    --backgroud-btn-dm1: hsl(210, 78%, 56%);
+    --backgroud-btn-dm2: hsl(146, 68%, 55%);
 }
 
 body {
@@ -62,13 +65,31 @@ h1 {
     display: block;
     width: 30px;
     height: 30px;
-    background: var(--blue-dark);
+    background: var(--white);
     border-radius: 50%;
     transform: translateX(40px);
+    transition: .3s;
+    will-change: transform;
 }
 
-.checkbox::checked~.switch {
-    border: 1px solid yellow;
+.checkbox:checked~.switch:before {
+    transform: translateX(0);
+}
+
+.dark-mode {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1em;
+}
+
+.dark-mode-title {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: var(--dark-grayish);
+}
+
+.checkbox {
+    display: none;
 }
 
 .top-cards {
@@ -256,6 +277,12 @@ h2 {
     }
     .header {
         background: hsl(230, 17%, 14%);
+    }
+    .switch {
+        background: linear-gradient(to right, var(--backgroud-btn-dm1), var(--backgroud-btn-dm2))
+    }
+    .switch::before {
+        background: var(--blue-dark);
     }
      :root {
         --light-grayish-blue: hsl(228, 28%, 20%);
