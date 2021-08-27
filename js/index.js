@@ -1,6 +1,5 @@
-// const checkbox = document.querySelector('#checkbox');
+const checkbox = document.querySelector('#checkbox');
 
-// if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-//     checkbox.setAttribute('checked', true)
-
-// }
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    checkbox.setAttribute('checked', true)
+}
